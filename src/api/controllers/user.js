@@ -49,7 +49,7 @@ const register = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "Error interno del servidor",
-      error: error.message
+      error
     });
   }
 };
@@ -71,7 +71,7 @@ const login = async (req, res, next) => {
       const token = generateSign(user._id);
 
       console.log("login ✅");
-      return res.status(201).json({
+      return res.status(200).json({
         status: "success",
         message: "Acceso realizado con éxito",
         user,
@@ -87,7 +87,7 @@ const login = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "Error interno del servidor",
-      error: error.message
+      error
     });
   }
 };
@@ -106,7 +106,7 @@ const getUsers = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "No se pudieron obtener los usuarios",
-      error: error.message
+      error
     });
   }
 };
@@ -127,7 +127,7 @@ const getUserById = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "No se pudo obtener el usuario",
-      error: error.message
+      error
     });
   }
 };
@@ -223,7 +223,7 @@ const putUser = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "Error interno del servidor",
-      error: error.message
+      error
     });
   }
 };
@@ -269,7 +269,7 @@ const deleteUser = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "Error interno del servidor",
-      error: error.message
+      error
     });
   }
 };
