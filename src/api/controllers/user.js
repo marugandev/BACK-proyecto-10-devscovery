@@ -39,11 +39,14 @@ const register = async (req, res, next) => {
 
     const newUserSaved = await newUser.save();
 
+    const token = generateSign(newUserSaved._id);
+
     console.log("register ✅");
     return res.status(201).json({
       status: "success",
       message: "Registro realizado con éxito",
-      user: newUserSaved
+      user: newUserSaved,
+      token
     });
   } catch (error) {
     return res.status(500).json({
