@@ -6,9 +6,17 @@ const getEvents = async (req, res, next) => {
     const events = await Event.find().populate("attendees");
 
     console.log("getEvents ✅");
-    return res.status(200).json(events);
+    return res.status(200).json({
+      status: "success",
+      message: "Eventos obtenidos con éxito",
+      data: events
+    });
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(500).json({
+      status: "error",
+      message: "Error interno del servidor al obtener los eventos",
+      error: error.message
+    });
   }
 };
 
@@ -19,9 +27,17 @@ const getEventById = async (req, res, next) => {
     const event = await Event.findById(id).populate("attendees");
 
     console.log("getEventById ✅");
-    return res.status(200).json(event);
+    return res.status(200).json({
+      status: "success",
+      message: "Evento obtenido con éxito",
+      data: event
+    });
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(500).json({
+      status: "error",
+      message: "Error interno del servidor al obtener el evento",
+      error: error.message
+    });
   }
 };
 
@@ -30,24 +46,29 @@ const postEvent = async (req, res, next) => {
     const { title, description, date, duration } = req.body;
 
     if (!title || !date || !duration) {
-      return res
-        .status(400)
-        .json(
-          "Failed to create, missing required fields (title, date, or duration) 😔"
-        );
+      return res.status(400).json({
+        status: "error",
+        message:
+          "Fallo en el registro, faltan campos requeridos (título, fecha o duración)"
+      });
     }
 
     const titleDuplicated = await Event.findOne({ title });
     if (titleDuplicated) {
-      return res.status(400).json("Failed to create, title already exists 😔");
+      return res.status(400).json({
+        status: "error",
+        message: "Fallo en el registro, el título ya existe"
+      });
     }
 
     if (description) {
       const descriptionDuplicated = await Event.findOne({ description });
       if (descriptionDuplicated) {
-        return res
-          .status(400)
-          .json("Failed to create, the same description already exists 😔");
+        return res.status(400).json({
+          status: "error",
+          message:
+            "Fallo en el registro, ya existe un evento con la misma descripción"
+        });
       }
     }
 
@@ -60,9 +81,17 @@ const postEvent = async (req, res, next) => {
     const savedNewEvent = await newEvent.save();
 
     console.log("postEvent ✅");
-    return res.status(201).json(savedNewEvent);
+    return res.status(201).json({
+      status: "success",
+      message: "Evento creado con éxito",
+      data: savedNewEvent
+    });
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(500).json({
+      status: "error",
+      message: "Error interno del servidor al crear el evento",
+      error: error.message
+    });
   }
 };
 
@@ -72,7 +101,10 @@ const putEvent = async (req, res, next) => {
 
     const oldEvent = await Event.findById(id);
     if (!oldEvent) {
-      return res.status(400).json({ message: "Event not found 😔" });
+      return res.status(404).json({
+        status: "error",
+        message: "Evento no encontrado"
+      });
     }
 
     const { title, description, img, attendees, ...updatedData } = req.body;
@@ -80,9 +112,10 @@ const putEvent = async (req, res, next) => {
     if (title) {
       const titleDuplicated = await Event.findOne({ title });
       if (titleDuplicated) {
-        return res
-          .status(400)
-          .json("Failed to update, title already exists 😔");
+        return res.status(400).json({
+          status: "error",
+          message: "Fallo en la actualización, el título ya existe"
+        });
       }
       updatedData.title = title;
     }
@@ -93,9 +126,11 @@ const putEvent = async (req, res, next) => {
         descriptionDuplicated &&
         descriptionDuplicated._id.toString() !== id
       ) {
-        return res
-          .status(400)
-          .json("Failed to update, the same description already exist 😔");
+        return res.status(400).json({
+          status: "error",
+          message:
+            "Fallo en la actualización, ya existe un evento con la misma descripción"
+        });
       }
       updatedData.description = description;
     }
@@ -116,9 +151,17 @@ const putEvent = async (req, res, next) => {
     });
 
     console.log("putEvent ✅");
-    return res.status(200).json(updatedEvent);
+    return res.status(200).json({
+      status: "success",
+      message: "Evento actualizado con éxito",
+      data: updatedEvent
+    });
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(500).json({
+      status: "error",
+      message: "Error interno del servidor al actualizar el evento",
+      error: error.message
+    });
   }
 };
 
@@ -128,12 +171,20 @@ const deleteEvent = async (req, res, next) => {
 
     const deletedEvent = await Event.findByIdAndDelete(id);
 
-    if (deletedEvent.img) deleteFile(deletedEvent.img);
+    if (deleteEvent && deletedEvent.img) deleteFile(deletedEvent.img);
 
     console.log("deleteEvent ✅");
-    return res.status(200).json(deletedEvent);
+    return res.status(200).json({
+      status: "success",
+      message: "Evento eliminado con éxito",
+      data: deletedEvent
+    });
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(500).json({
+      status: "error",
+      message: "Error interno del servidor al eliminar el evento",
+      error: error.message
+    });
   }
 };
 
