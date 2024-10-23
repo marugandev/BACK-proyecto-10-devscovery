@@ -15,7 +15,7 @@ const getEvents = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "Error interno del servidor al obtener los eventos",
-      error: error.message
+      error
     });
   }
 };
@@ -36,7 +36,7 @@ const getEventById = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "Error interno del servidor al obtener el evento",
-      error: error.message
+      error
     });
   }
 };
@@ -90,7 +90,7 @@ const postEvent = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "Error interno del servidor al crear el evento",
-      error: error.message
+      error
     });
   }
 };
@@ -160,7 +160,7 @@ const putEvent = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "Error interno del servidor al actualizar el evento",
-      error: error.message
+      error
     });
   }
 };
@@ -183,7 +183,7 @@ const deleteEvent = async (req, res, next) => {
     return res.status(500).json({
       status: "error",
       message: "Error interno del servidor al eliminar el evento",
-      error: error.message
+      error
     });
   }
 };
