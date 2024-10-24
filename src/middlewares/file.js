@@ -10,7 +10,8 @@ const uploadImg = (folderName) => {
     cloudinary: cloudinary,
     params: {
       folder: `${mainFolder}/${subFolder}`,
-      allowed_formats: ["jpg", "png", "jpeg", "gif", "webp"]
+      allowed_formats: ["jpg", "png", "jpeg", "gif", "webp"],
+      transformation: [{ fetch_format: "webp", quality: "auto:good" }]
     }
   });
 
