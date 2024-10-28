@@ -6,7 +6,9 @@ const isAdmin = async (req, res, next) => {
     const token = req.headers.authorization;
 
     if (!token) {
-      return res.status(400).json("Not authorized ❌");
+      return res.status(400).json({
+        message: "No estás autorizado"
+      });
     }
 
     const parsedToken = token.replace("Bearer ", "");
@@ -19,7 +21,9 @@ const isAdmin = async (req, res, next) => {
       req.user = user;
       next();
     } else {
-      return res.status(403).json({ message: "Not authorized ❌, only admin" });
+      return res.status(403).json({
+        message: "No estás autorizado, sólo administrador"
+      });
     }
   } catch (error) {
     return res.status(400).json(error);
@@ -31,7 +35,9 @@ const isAuth = async (req, res, next) => {
     const token = req.headers.authorization;
 
     if (!token) {
-      return res.status(400).json("Not authorized ❌");
+      return res.status(400).json({
+        message: "No estás autorizado"
+      });
     }
 
     const parsedToken = token.replace("Bearer ", "");
