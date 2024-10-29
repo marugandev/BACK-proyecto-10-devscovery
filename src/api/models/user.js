@@ -31,7 +31,8 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String,
       trim: true,
-      default: ""
+      default:
+        "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1730217741/proyecto-10-devscovery/assets/users_images/w4hcilmkwmyqnrg2tz4k.webp"
     },
     favoriteEvents: [
       {
