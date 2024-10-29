@@ -13,7 +13,7 @@ const {
 userRouter.post("/register", uploadImg("users").single("avatar"), register);
 userRouter.post("/login", login);
 userRouter.get("/", [isAdmin], getUsers);
-userRouter.get("/:id", [isAdmin], getUserById);
+userRouter.get("/:id", [isAuth], getUserById);
 userRouter.put("/:id", [isAuth, uploadImg("users").single("avatar")], putUser);
 userRouter.delete(
   "/:id",
