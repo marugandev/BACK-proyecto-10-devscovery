@@ -6,7 +6,8 @@ const users = [
     email: "admin@example.com",
     password: "Admin123",
     role: "admin",
-    avatar: "https://example.com/avatar/carlos.png",
+    avatar:
+      "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1730215431/proyecto-10-devscovery/assets/users_images/eremopt9chekpyvburqa.webp",
     favoriteEvents: []
   },
   {
@@ -14,7 +15,8 @@ const users = [
     email: "lucia@example.com",
     password: "Lucia123",
     role: "user",
-    avatar: "https://example.com/avatar/lucia.png",
+    avatar:
+      "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1730215431/proyecto-10-devscovery/assets/users_images/xzhxifd0zhjwf6nyrkpv.webp",
     favoriteEvents: []
   },
   {
@@ -22,7 +24,8 @@ const users = [
     email: "miguel@example.com",
     password: "Miguel123",
     role: "user",
-    avatar: "https://example.com/avatar/miguel.png",
+    avatar:
+      "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1730215431/proyecto-10-devscovery/assets/users_images/lflviztftu77konmpxlq.webp",
     favoriteEvents: []
   }
 ];
