@@ -45,6 +45,8 @@ const putEventAttendees = async (req, res, next) => {
       }
     );
 
+    const user = await User.findById(userId);
+
     console.log("putEventAttendees ✅");
     res.status(200).json({
       status: "success",
@@ -52,7 +54,8 @@ const putEventAttendees = async (req, res, next) => {
         ? "Asistencia cancelada con éxito"
         : "Asistencia registrada con éxito",
       event,
-      userId
+      user
+      /*       userId */
     });
   } catch (error) {
     /*       console.error(error); */
