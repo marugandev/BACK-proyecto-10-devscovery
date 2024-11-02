@@ -55,10 +55,10 @@ const putEventAttendees = async (req, res, next) => {
         : "Asistencia registrada con éxito",
       event,
       user
-      /*       userId */
+      /* userId */
     });
   } catch (error) {
-    /*       console.error(error); */
+    /* console.error(error); */
     res.status(500).json({
       status: "error",
       message: "Fallo al registrar la asistencia",
