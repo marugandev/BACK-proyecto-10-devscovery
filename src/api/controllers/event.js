@@ -109,35 +109,13 @@ const putEvent = async (req, res, next) => {
 
     const { title, description, img, attendees, ...updatedData } = req.body;
 
-    if (title) {
-      const titleDuplicated = await Event.findOne({ title });
-      if (titleDuplicated) {
-        return res.status(400).json({
-          status: "error",
-          message: "Fallo en la actualización, el título ya existe"
-        });
-      }
-      updatedData.title = title;
-    }
-
-    if (description) {
-      const descriptionDuplicated = await Event.findOne({ description });
-      if (
-        descriptionDuplicated &&
-        descriptionDuplicated._id.toString() !== id
-      ) {
-        return res.status(400).json({
-          status: "error",
-          message:
-            "Fallo en la actualización, ya existe un evento con la misma descripción"
-        });
-      }
-      updatedData.description = description;
-    }
+    updatedData.title = title || oldEvent.title;
+    updatedData.description = description || oldEvent.description;
+    updatedData.date = updatedData.date || oldEvent.date;
+    updatedData.duration = updatedData.duration || oldEvent.duration;
 
     if (req.file) {
       updatedData.img = req.file.path;
-
       deleteFile(oldEvent.img);
     }
 
@@ -150,7 +128,6 @@ const putEvent = async (req, res, next) => {
       runValidators: true
     });
 
-    console.log("putEvent ✅");
     return res.status(200).json({
       status: "success",
       message: "Evento actualizado con éxito",
