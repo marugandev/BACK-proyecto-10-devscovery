@@ -13,6 +13,8 @@ postEvent
 putEvent
 deleteEvent
 
+**eventAttendees**
+
 **seeds**
 mainSeed
 npm run mainSeed

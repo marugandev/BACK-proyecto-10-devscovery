@@ -1,9 +1,9 @@
 const events = [
   {
-    title: "AI & Future of Coding 2024",
+    title: "AI & Future of Coding 2025",
     description:
       "Conferencia para desarrolladores centrada en las últimas herramientas de inteligencia artificial para mejorar el flujo de trabajo y la eficiencia en el desarrollo de software.",
-    date: new Date("2024-10-30T09:00:00"),
+    date: new Date("2025-01-25T09:00:00"),
     duration: 360,
     img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806863/proyecto-10-devscovery/assets/myjvxi1btu2fg5asxoij.jpg",
 
@@ -16,10 +16,10 @@ const events = [
     attendees: []
   },
   {
-    title: "Deep Learning Developer Day 2024",
+    title: "Deep Learning Developer Day 2025",
     description:
       "Un día dedicado a las herramientas más recientes en Deep Learning y cómo aplicarlas en proyectos reales.",
-    date: new Date("2024-11-20T10:00:00"),
+    date: new Date("2025-03-07T10:00:00"),
     duration: 420,
     img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806864/proyecto-10-devscovery/assets/zqxbkbqnmwdpet91n3ql.jpg",
 
@@ -32,10 +32,10 @@ const events = [
     attendees: []
   },
   {
-    title: "Virtual DevOps AI Tools 2024",
+    title: "Virtual DevOps AI Tools 2025",
     description:
       "Seminario virtual que explora el uso de la IA para optimizar pipelines DevOps y herramientas de automatización.",
-    date: new Date("2024-12-05T17:00:00"),
+    date: new Date("2025-03-08T17:00:00"),
     duration: 180,
     img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806864/proyecto-10-devscovery/assets/zblkncjyf474ot42lpyt.jpg",
 
@@ -48,10 +48,10 @@ const events = [
     attendees: []
   },
   {
-    title: "European AI for Developers Summit 2024",
+    title: "European AI for Developers Summit 2025",
     description:
       "Una cumbre donde los líderes europeos discuten los avances en IA y sus aplicaciones en el desarrollo de software.",
-    date: new Date("2024-11-12T09:30:00"),
+    date: new Date("2025-05-10T09:30:00"),
     duration: 540,
     img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806864/proyecto-10-devscovery/assets/ieez9mh6s2oywmwqijz4.jpg",
 
@@ -67,7 +67,7 @@ const events = [
     title: "JavaScript AI Libraries Webinar 2024",
     description:
       "Webinar sobre las bibliotecas de JavaScript más recientes para implementar IA en aplicaciones web.",
-    date: new Date("2024-11-25T16:00:00"),
+    date: new Date("2024-12-21T16:00:00"),
     duration: 120,
     img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806864/proyecto-10-devscovery/assets/rphjbws7bdqukkruug1b.jpg",
 
