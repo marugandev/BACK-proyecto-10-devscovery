@@ -64,10 +64,10 @@ const events = [
     attendees: []
   },
   {
-    title: "JavaScript AI Libraries Webinar 2024",
+    title: "JavaScript AI Libraries Webinar 2025",
     description:
       "Webinar sobre las bibliotecas de JavaScript más recientes para implementar IA en aplicaciones web.",
-    date: new Date("2024-12-21T16:00:00"),
+    date: new Date("2025-10-10T16:00:00"),
     duration: 120,
     img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806864/proyecto-10-devscovery/assets/rphjbws7bdqukkruug1b.jpg",
 

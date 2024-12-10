@@ -19,7 +19,7 @@ deleteEvent
 mainSeed
 npm run mainSeed
 
-data
+**data**
 users
 events
 
