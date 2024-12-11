@@ -9,7 +9,14 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+/* app.use(cors()); */
+app.use(
+  cors({
+    origin: "https://front-proyecto-10-devscovery-rtc.vercel.app/", // Reemplaza con la URL de tu frontend
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  })
+);
 
 connectDB();
 connectCloudinary();
