@@ -80,6 +80,6 @@ La autenticación se maneja mediante JSON Web Tokens (JWT). El token se genera c
 
 ## **Repositorio Frontend**
 
-Este backend tiene un frontend completo disponible en otro repositorio [FRONT-proyecto-10-devscovery](url_del_repositorio_frontend). El frontend está diseñado para consumir esta API y proporcionar una interfaz para gestionar y visualizar los usuarios, eventos y asistentes a eventos.
+Este backend tiene un frontend completo disponible en otro repositorio [FRONT-proyecto-10-devscovery](https://github.com/marugandev/FRONT-proyecto-10-devscovery). El frontend está diseñado para consumir esta API y proporcionar una interfaz para gestionar y visualizar los usuarios, eventos y asistentes a eventos.
 
 El repositorio del frontend contiene su propio README.
