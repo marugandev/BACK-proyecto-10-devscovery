@@ -5,7 +5,7 @@ const { connectDB } = require("./src/config/db");
 const { connectCloudinary } = require("./src/config/cloudinary");
 const mainRouter = require("./src/api/routes/mainRouter");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
@@ -21,5 +21,5 @@ app.use("*", (req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`"http://localhost:${PORT}"`);
+  console.log(`"Server is running on port ${PORT}"`);
 });
