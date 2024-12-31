@@ -1,7 +1,31 @@
-const { generateSign } = require("../../utils/functions/jwt");
+const { generateSign, verifyJwt } = require("../../utils/functions/jwt");
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
 const { deleteFile } = require("../../utils/functions/deleteFile");
+
+const verifyToken = async (req, res, next) => {
+  const token = req.headers.authorization?.split(" ")[1];
+
+  if (!token) {
+    return res.status(401).json({
+      status: "error",
+      message: "Token no proporcionado"
+    });
+  }
+
+  try {
+    const decodedToken = await verifyJwt(token);
+    return res.status(200).json({
+      status: "success",
+      user: decodedToken
+    });
+  } catch (error) {
+    return res.status(401).json({
+      status: "error",
+      message: error.message
+    });
+  }
+};
 
 const register = async (req, res, next) => {
   try {
@@ -278,6 +302,7 @@ const deleteUser = async (req, res, next) => {
 };
 
 module.exports = {
+  verifyToken,
   register,
   login,
   getUsers,

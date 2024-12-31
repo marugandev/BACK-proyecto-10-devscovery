@@ -12,7 +12,7 @@ const isAdmin = async (req, res, next) => {
     }
 
     const parsedToken = token.replace("Bearer ", "");
-    const { id } = verifyJwt(parsedToken);
+    const { id } = await verifyJwt(parsedToken);
 
     const user = await User.findById(id);
 
@@ -41,7 +41,7 @@ const isAuth = async (req, res, next) => {
     }
 
     const parsedToken = token.replace("Bearer ", "");
-    const { id } = verifyJwt(parsedToken);
+    const { id } = await verifyJwt(parsedToken);
 
     const user = await User.findById(id);
 
