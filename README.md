@@ -37,11 +37,12 @@ Los datos de ejemplo para usuarios y eventos están dentro de la carpeta data. L
 **Usuarios (User)**
 | Método | Ruta | Descripción |
 | ------ | ----------------- | --------------------------------------- |
-| POST | `/api/v1/users/login` | Inicia sesión de un usuario y devuelve un token JWT. |
+| GET | `/api/v1/users/verify` | Obtiene el token registrado y lo verifica con JWT. |
 | POST | `/api/v1/users/register` | Crea un nuevo usuario en el sistema. |
+| POST | `/api/v1/users/login` | Inicia sesión de un usuario y devuelve un token JWT. |
 | GET | `/api/v1/users` | Obtiene una lista de todos los usuarios registrados. |
-| GET | `/api/v1/users:id` | Obtiene los detalles de un usuario por su ID. |
-| PUT | `/api/v1/users:id` | Actualiza los datos de un usuario. |
+| GET | `/api/v1/users/:id` | Obtiene los detalles de un usuario por su ID. |
+| PUT | `/api/v1/users/:id` | Actualiza los datos de un usuario. |
 | DELETE | `/api/v1/users/:id` | Elimina un usuario del sistema. |
 
 **Eventos (Event)**
