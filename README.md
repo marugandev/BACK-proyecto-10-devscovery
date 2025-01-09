@@ -34,16 +34,11 @@ Los datos de ejemplo para usuarios y eventos están dentro de la carpeta data. L
 
 **Usuarios predeterminados**:
 
-- **Role (admin)**:
-  | userName | email | password |
-  | ------ | ----------------- | --------------------------------------- |
-  | Admin | `admin@example.com` | Admin123 |
-
-- **Role (User)**:
-  | userName | email | password |
-  | ------ | ----------------- | --------------------------------------- |
-  | Lucia | `lucia@example.com` | Lucia123 |
-  | Miguel | `miguel@example.com` | Miguel123 |
+| userName | email                | password  | role  |
+| -------- | -------------------- | --------- | ----- |
+| Admin    | `admin@example.com`  | Admin123  | admin |
+| Lucia    | `lucia@example.com`  | Lucia123  | user  |
+| Miguel   | `miguel@example.com` | Miguel123 | user  |
 
 ## **Endpoints**
 
