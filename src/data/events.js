@@ -5,7 +5,7 @@ const events = [
       "Conferencia para desarrolladores centrada en las últimas herramientas de inteligencia artificial para mejorar el flujo de trabajo y la eficiencia en el desarrollo de software.",
     date: new Date("2025-01-25T09:00:00"),
     duration: 360,
-    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806863/proyecto-10-devscovery/assets/myjvxi1btu2fg5asxoij.jpg",
+    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1737028578/proyecto-10-devscovery/assets/jrheob9svytn8pgahebj.webp",
 
     location: "Palacio de Congresos, Madrid, España",
     isVirtual: false,
@@ -21,7 +21,7 @@ const events = [
       "Un día dedicado a las herramientas más recientes en Deep Learning y cómo aplicarlas en proyectos reales.",
     date: new Date("2025-03-07T10:00:00"),
     duration: 420,
-    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806864/proyecto-10-devscovery/assets/zqxbkbqnmwdpet91n3ql.jpg",
+    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1737028518/proyecto-10-devscovery/assets/hedhuxgccvuscodhvxom.webp",
 
     location: "Fira Barcelona, Barcelona, España",
     isVirtual: false,
@@ -37,7 +37,7 @@ const events = [
       "Seminario virtual que explora el uso de la IA para optimizar pipelines DevOps y herramientas de automatización.",
     date: new Date("2025-03-08T17:00:00"),
     duration: 180,
-    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806864/proyecto-10-devscovery/assets/zblkncjyf474ot42lpyt.jpg",
+    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1737028171/proyecto-10-devscovery/assets/o2ymd8lttaulh7j3zsyx.webp",
 
     location: "",
     isVirtual: true,
@@ -53,7 +53,7 @@ const events = [
       "Una cumbre donde los líderes europeos discuten los avances en IA y sus aplicaciones en el desarrollo de software.",
     date: new Date("2025-05-10T09:30:00"),
     duration: 540,
-    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806864/proyecto-10-devscovery/assets/ieez9mh6s2oywmwqijz4.jpg",
+    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1737028451/proyecto-10-devscovery/assets/rzfivcnrhaoyarytcfpo.webp",
 
     location: "Estadio Allianz, Múnich, Alemania",
     isVirtual: false,
@@ -69,7 +69,7 @@ const events = [
       "Webinar sobre las bibliotecas de JavaScript más recientes para implementar IA en aplicaciones web.",
     date: new Date("2025-10-10T16:00:00"),
     duration: 120,
-    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1729806864/proyecto-10-devscovery/assets/rphjbws7bdqukkruug1b.jpg",
+    img: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1737028336/proyecto-10-devscovery/assets/zhap4i2slhjcvaunoexg.webp",
 
     location: "",
     isVirtual: true,
