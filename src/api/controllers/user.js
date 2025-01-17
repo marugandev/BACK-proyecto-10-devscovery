@@ -142,6 +142,13 @@ const getUserById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
+    if (id !== req.user._id.toString()) {
+      return res.status(403).json({
+        status: "error",
+        message: "No tienes permiso para realizar esta acción"
+      });
+    }
+
     const user = await User.findById(id).populate("favoriteEvents");
 
     console.log("getUserById ✅");
